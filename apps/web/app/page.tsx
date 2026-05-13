@@ -1,3 +1,5 @@
+import { TripPlanner } from "./trip-planner";
+
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const route = [
@@ -168,6 +170,9 @@ export default function Page() {
             箱根溫泉和回程採買排進同一條舒服路線。
           </p>
           <div className="hero-actions" aria-label="主要行程資訊">
+            <a className="primary-link" href="#planner">
+              規劃工具
+            </a>
             <a className="primary-link" href="#route">
               看行程
             </a>
@@ -275,6 +280,8 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <TripPlanner />
 
       <section className="section" id="budget">
         <div className="section-heading">
