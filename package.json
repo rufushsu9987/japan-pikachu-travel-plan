@@ -1,0 +1,14 @@
+{
+  "name": "japan-pikachu-travel-plan",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:web": "npm run dev --workspace @japan-pikachu-travel/web",
+    "build": "npm run build:web",
+    "build:web": "npm run build --workspace @japan-pikachu-travel/web"
+  }
+}
