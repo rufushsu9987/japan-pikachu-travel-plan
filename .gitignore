@@ -3,8 +3,11 @@ node_modules
 .env
 .env.*
 dist
+out
 coverage
 .turbo
 .next
+apps/web/out
+apps/web/.next
 pnpm-lock.yaml
 yarn.lock

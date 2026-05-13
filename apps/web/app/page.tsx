@@ -48,6 +48,39 @@ const watchTips = [
   "拍照時先設定連拍或錄影，角色經過的時間比想像中短。"
 ];
 
+const externalLinks = [
+  {
+    title: "Pokemon 官方活動資訊",
+    description: "出發前確認皮卡丘遊行或相關活動的最新日期、路線和注意事項。",
+    href: "https://www.pokemon.co.jp/ex/pika_event/en/event_04/",
+    tag: "活動"
+  },
+  {
+    title: "橫濱官方旅遊指南",
+    description: "查港未來、紅磚倉庫、山下公園、交通和城市活動資訊。",
+    href: "https://www.yokohamajapan.com/en/",
+    tag: "橫濱"
+  },
+  {
+    title: "JR East 官方路線搜尋",
+    description: "規劃東京、橫濱、箱根周邊移動時間，確認列車時刻。",
+    href: "https://www.jreast.co.jp/multi/en/index.html/",
+    tag: "交通"
+  },
+  {
+    title: "Japan Meteorological Agency",
+    description: "查看日本官方天氣、降雨與颱風資訊，遊行日尤其重要。",
+    href: "https://www.jma.go.jp/jma/indexe.html",
+    tag: "天氣"
+  },
+  {
+    title: "Minato Mirai 21 景點介紹",
+    description: "快速理解港未來周邊景點分布，安排遊行前後散步路線。",
+    href: "https://www.japan-guide.com/e/e3200.html",
+    tag: "景點"
+  }
+];
+
 const imageCredits = [
   {
     src: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1600&q=80",
@@ -184,6 +217,29 @@ export default function Page() {
               <strong>{amount}</strong>
               <small>{note}</small>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section links-section" id="links">
+        <div className="section-heading">
+          <span className="section-kicker">Useful Links</span>
+          <h2>實用外部連結</h2>
+        </div>
+        <div className="external-links">
+          {externalLinks.map((link) => (
+            <a
+              className="external-link-card"
+              href={link.href}
+              key={link.href}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <span>{link.tag}</span>
+              <strong>{link.title}</strong>
+              <p>{link.description}</p>
+              <small>開啟連結</small>
+            </a>
           ))}
         </div>
       </section>
