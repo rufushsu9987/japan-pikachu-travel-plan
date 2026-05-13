@@ -121,6 +121,16 @@ export default function Page() {
         </div>
         <div className="hero-visual" aria-label="旅遊重點照片">
           <img src={imageCredits[0].src} alt={imageCredits[0].alt} />
+          <div className="pikachu-badge" aria-label="皮卡丘主題裝飾">
+            <span className="ear left-ear" />
+            <span className="ear right-ear" />
+            <span className="eye left-eye" />
+            <span className="eye right-eye" />
+            <span className="cheek left-cheek" />
+            <span className="cheek right-cheek" />
+            <span className="mouth" />
+            <span className="tail" />
+          </div>
           <div className="mascot-card">
             <span>Parade Goal</span>
             <strong>皮卡丘遊行</strong>
@@ -197,6 +207,10 @@ export default function Page() {
         <div>
           <span className="section-kicker">Parade Notes</span>
           <h2>看皮卡丘遊行的重點</h2>
+          <div className="parade-mascot" aria-hidden="true">
+            <span>PIKA</span>
+            <strong>皮卡丘</strong>
+          </div>
         </div>
         <div className="tips-list">
           {watchTips.map((tip) => (
