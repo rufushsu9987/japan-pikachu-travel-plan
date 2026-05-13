@@ -41,6 +41,63 @@ const budget = [
   ["活動購物", "NT$ 6,000+", "Pokemon Center 和遊行周邊"]
 ];
 
+const klookRecommendations = [
+  {
+    title: "澀谷 Shibuya Sky 展望台門票",
+    day: "Day 2",
+    fit: "接在澀谷、原宿行程後，看東京黃昏和夜景最順。",
+    price: "NT$ 531 起",
+    rating: "4.7 / 43.8K+ 評價",
+    href: "https://www.klook.com/zh-TW/activity/70672-shibuya-sky-tokyo/?utm_source=openai&utm_medium=platform-openai&utm_term=c2deca99-c75f-444e-9dd1-2984dbacc565",
+    image: "https://res.klook.com/image/upload/activities/yjob4pwe3quwy452qk5q.jpg"
+  },
+  {
+    title: "東京 teamLab Borderless 數位藝術美術館",
+    day: "Day 2 / Day 5",
+    fit: "室內備案很強，適合雨天或想把旅程做得更有記憶點。",
+    price: "NT$ 1,180 起",
+    rating: "4.8 / 22.3K+ 評價",
+    href: "https://www.klook.com/zh-TW/activity/20707-teamlab-borderless-admission-ticket-tokyo/?utm_source=openai&utm_medium=platform-openai&utm_term=c2deca99-c75f-444e-9dd1-2984dbacc565",
+    image: "https://res.klook.com/image/upload/activities/jrj7lehqfkhqjxaxao9e.jpg"
+  },
+  {
+    title: "淺草和服 & 浴衣體驗",
+    day: "Day 1",
+    fit: "安排在淺草寺散步同一天，拍照和城市散步都自然。",
+    price: "NT$ 560 起",
+    rating: "4.9 / 7.3K+ 評價",
+    href: "https://www.klook.com/zh-TW/activity/8318-miyabi-kimono-yukata-rental-tokyo/?utm_source=openai&utm_medium=platform-openai&utm_term=c2deca99-c75f-444e-9dd1-2984dbacc565",
+    image: "https://res.klook.com/image/upload/activities/i11n8jclsb1s6slzabs6.jpg"
+  },
+  {
+    title: "東京豐洲千客萬來萬葉俱樂部溫泉",
+    day: "Day 4 備案",
+    fit: "如果不想拉到箱根，留在東京也能泡湯和看灣岸夜景。",
+    price: "NT$ 396 起",
+    rating: "4.7 / 1.5K+ 評價",
+    href: "https://www.klook.com/zh-TW/activity/103671-toyosu-manyo-club-onsen-experience-tokyo/?utm_source=openai&utm_medium=platform-openai&utm_term=c2deca99-c75f-444e-9dd1-2984dbacc565",
+    image: "https://res.klook.com/image/upload/activities/hpakv7stziauhwzbbrbr.jpg"
+  },
+  {
+    title: "富士山壯麗美景探秘一日遊",
+    day: "Day 4 替代路線",
+    fit: "想把箱根改成富士山打卡路線時，可以從東京出發當日來回。",
+    price: "NT$ 1,170 起",
+    rating: "4.9 / 9.8K+ 評價",
+    href: "https://www.klook.com/zh-TW/activity/131149-mount-fuji-magnificent-scenery-day-tour-from-tokyo/?utm_source=openai&utm_medium=platform-openai&utm_term=c2deca99-c75f-444e-9dd1-2984dbacc565",
+    image: "https://res.klook.com/image/upload/activities/rqpgs6b3rn9ynero6rx7.jpg"
+  },
+  {
+    title: "東京迪士尼度假區門票",
+    day: "延伸 Day 6",
+    fit: "如果能多留一天，適合把角色主題旅程直接拉滿。",
+    price: "NT$ 1,517 起",
+    rating: "4.8 / 95.3K+ 評價",
+    href: "https://www.klook.com/zh-TW/activity/695-tokyo-disney-resort-1-day-pass-tokyo/?utm_source=openai&utm_medium=platform-openai&utm_term=c2deca99-c75f-444e-9dd1-2984dbacc565",
+    image: "https://res.klook.com/image/upload/activities/frrnxyfrq6uzs1kapdct.jpg"
+  }
+];
+
 const watchTips = [
   "皮卡丘遊行通常人潮密集，建議活動前 90 到 120 分鐘抵達預定觀賞點。",
   "實際日期、路線和規範每年可能調整，出發前以 Pokemon 官方活動公告和橫濱觀光資訊為準。",
@@ -231,6 +288,35 @@ export default function Page() {
               <strong>{amount}</strong>
               <small>{note}</small>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section klook-section" id="klook">
+        <div className="section-heading">
+          <span className="section-kicker">Klook Picks</span>
+          <h2>Klook 搭配推薦</h2>
+        </div>
+        <div className="klook-grid">
+          {klookRecommendations.map((activity) => (
+            <a
+              className="klook-card"
+              href={activity.href}
+              key={activity.href}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <img src={activity.image} alt={activity.title} />
+              <div className="klook-card-body">
+                <span>{activity.day}</span>
+                <h3>{activity.title}</h3>
+                <p>{activity.fit}</p>
+                <div className="klook-meta">
+                  <strong>{activity.price}</strong>
+                  <small>{activity.rating}</small>
+                </div>
+              </div>
+            </a>
           ))}
         </div>
       </section>

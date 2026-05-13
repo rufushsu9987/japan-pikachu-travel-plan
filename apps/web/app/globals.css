@@ -463,6 +463,86 @@ h3 {
   line-height: 1.55;
 }
 
+.klook-section {
+  background: #fff7df;
+}
+
+.klook-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.klook-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.klook-card:hover {
+  box-shadow: 0 18px 40px rgba(30, 36, 35, 0.12);
+  transform: translateY(-3px);
+}
+
+.klook-card img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.klook-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.klook-card-body span {
+  align-self: flex-start;
+  background: var(--blue);
+  border-radius: 999px;
+  color: #fffdf7;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  padding: 7px 10px;
+}
+
+.klook-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.klook-card p {
+  color: var(--muted);
+  line-height: 1.58;
+  margin-bottom: 20px;
+}
+
+.klook-meta {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.klook-meta strong {
+  color: var(--coral);
+  font-size: 20px;
+}
+
+.klook-meta small {
+  color: var(--muted);
+}
+
 .links-section {
   background: #eef5f7;
 }
@@ -552,6 +632,7 @@ h3 {
 
   .quick-panel,
   .budget-table,
+  .klook-grid,
   .external-links {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -604,6 +685,7 @@ h3 {
 
   .quick-panel,
   .budget-table,
+  .klook-grid,
   .external-links {
     grid-template-columns: 1fr;
   }
